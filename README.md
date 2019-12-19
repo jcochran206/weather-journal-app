@@ -3,6 +3,8 @@
 ## Description:
 This project is designed to establish an asynchronous web app that uses a Web API and user data to dynamically update the UI for a Weather-Journal App.
 
+Note: the weather api used for this app is from OpenWeather.com
+
 ## Technologies used:
 - HTML5
 - CSS3
@@ -13,6 +15,7 @@ This project is designed to establish an asynchronous web app that uses a Web AP
 ## Required Dependencies
 - Express
 - Body-Parser
+- Cors
 
 ## setup
 - cd into directory
