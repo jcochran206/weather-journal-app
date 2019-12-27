@@ -8,6 +8,8 @@ const port = 3000
 
 const app = express();
 
+
+
 //Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -19,26 +21,10 @@ app.use(cors());
 app.use(express.static('website'));
 
 //Get routes
-app.get('/all', sendProdData);
 
-function sendProdData(req, res){
-  console.log('grab data')
-  console.log(projectData)
-
-  res.send(projectData);
-}
 
 //Post routes
-app.post('/addWeather', addWeather);
-function addWeather(req, res){
-  const newInsert = {
-    temperature: req.body.temperature,
-    date: req.body.date,
-    userRes: req.body.userRes,
-  }
-  projectData = newInsert;
-  console.log(projectData)
-}
+
 
 //start server
 app.listen(port, () => {
