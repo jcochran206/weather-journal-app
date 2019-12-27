@@ -1,5 +1,6 @@
 //empty object
 const projectData = {};
+const data = []
 // Require Express to run server and routes
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -21,9 +22,31 @@ app.use(cors());
 app.use(express.static('website'));
 
 //Get routes
+app.get('/', function(req, res){
+  res.send('starter page')
+})
+//get project data
+app.get('/all', function(req, res){
+  res.send(projectData)
+})
+
 
 
 //Post routes
+app.post('/addWeather', addWeaterData)
+function addWeaterData(req, res){
+  //create object for client
+  newDataEntry = {
+    temperature: req.body.temperature,
+    date: req.body.date,
+    userContent: req.body.userContent,
+  }
+
+
+  projectData.push(newDataEntry);
+  res.send(newDataEntry)
+  console.log(projectData);
+}
 
 
 //start server
